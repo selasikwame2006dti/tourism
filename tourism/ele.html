@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giants of the Savannah: Elephants in Ghana</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            color: #333;
+            overflow-x: hidden;
+            font-size: 16px; /* Base font size for mobile */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a, .nav-button {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(5px);
+        }
+
+
+        .intro-section {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-image: url('elephant_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .intro-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-section div {
+            position: relative;
+            z-index: 1;
+        }
+
+        .elephant-section {
+            padding: 20px; /* Reduced padding for mobile */
+        }
+
+        .elephant-item {
+            display: flex;
+            flex-direction: column; /* Stacked layout for mobile */
+            width: 95%; /* Increased width for mobile */
+            margin: 20px auto; /* Reduced margins for mobile */
+            opacity: 0;
+            transform: translateY(20px); /* Reduced transform for mobile */
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .elephant-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .elephant-item img {
+            max-width: 100%; /* Full width images on mobile */
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-bottom: 10px; /* Space between image and text */
+        }
+
+        .elephant-item img:hover {
+            transform: scale(1.02); /* Reduced scale on mobile hover */
+        }
+
+        .elephant-item .text {
+            flex-grow: 1;
+            padding: 10px; /* Reduced padding for mobile */
+        }
+
+        .elephant-item.right img {
+            order: 0; /* Reset order for mobile */
+        }
+
+        .elephant-item.right .text {
+            order: 1; /* Reset order for mobile */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        footer h4 {
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (min-width: 768px) { /* Desktop styles */
+            .elephant-section {
+                padding: 40px;
+            }
+
+            .elephant-item {
+                flex-direction: row;
+                width: 90%;
+                margin: 40px auto;
+                transform: translateY(50px);
+            }
+
+            .elephant-item img {
+                max-width: 40%;
+            }
+
+            .elephant-item.right img {
+                order: 2;
+            }
+
+            .elephant-item.right .text {
+                order: 1;
+            }
+
+            .elephant-item img:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 200px){
+            body{
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="ghtour.png" alt="" height="50px" width="200px"><</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="places.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button class="nav-button">Sign Up</button></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="intro-section">
+        <div>
+            <h1>Giants of the Savannah: Elephants in Ghana</h1>
+            <p>A journey into the world of these magnificent creatures.</p>
+        </div>
+    </section>
+
+    <section class="elephant-section">
+        <div class="elephant-item">
+            <img src="jordan-davis-FrS0uSU9mvg-unsplash.jpg" alt="Elephant 1" onclick="alert('Image 1 clicked!')">
+            <div class="text">
+                <h3>The Gentle Giants of Mole</h3>
+                <p>
+                    Mole National Park, Ghana's largest protected area, is renowned for its diverse wildlife, and among its most iconic inhabitants are the African elephants. These gentle giants, with their immense size and intelligence, are a cornerstone of the park's ecosystem. 
+                    <br><br>
+                    The elephants in Mole National Park are primarily savanna elephants, adapted to the dry and open landscapes of the park. They are highly social animals, living in matriarchal herds led by experienced females. These herds can consist of several generations of related females, their calves, and young males. 
+                    <br><br>
+                    Elephants play a vital role in shaping the savanna ecosystem. Their feeding habits, including browsing on trees and shrubs and uprooting vegetation, create gaps in the forest canopy, allowing sunlight to reach the forest floor and promoting plant diversity. They also disperse seeds through their dung, contributing to the regeneration of plant life. 
+                    <br><br>
+                    Mole National Park offers excellent opportunities for wildlife viewing, including elephant sightings. Visitors can embark on guided game drives, walking safaris, and birdwatching excursions to observe these magnificent creatures in their natural habitat. 
+                    <br><br>
+                    However, the elephant population in Mole National Park, like elsewhere in Africa, faces significant threats. Habitat loss due to human encroachment, including agriculture and infrastructure development, is a major concern. Human-elephant conflict, such as crop raiding and infrastructure damage, can also lead to negative interactions and pose a threat to both elephants and local communities. 
+                    <br><br>
+                    Conservation efforts in Mole National Park are focused on mitigating human-elephant conflict, protecting elephant habitats, and promoting community-based conservation initiatives. These efforts aim to ensure the long-term survival of elephant populations and maintain the ecological balance of the park.
+                </p>
+                </p>
+            </div>
+        </div>
+        <div class="elephant-item">
+            <img src="matthew-spiteri-WfZ4WCuNtlg-unsplash.jpg" alt="Elephant 2" onclick="alert('Image 2 clicked!')">
+            <div class="text">
+                <h3>Beyond Mole: Elephant Distribution in Ghana</h3>
+                <p>
+                    While Mole National Park is undoubtedly the most well-known location for elephant sightings in Ghana, these magnificent creatures can also be found in other parts of the country, albeit in smaller numbers. 
+                    <br><br>
+                    The Digya National Park, situated in the Volta Region, is another potential habitat for elephants. Although less frequently sighted than in Mole, the park's diverse ecosystem, encompassing forests, wetlands, and savanna woodlands, could potentially support a small elephant population. 
+                    <br><br>
+                    The Bia National Park, located in the Western Region, is another area where elephants may occasionally be encountered. However, the dense rainforest and limited access to this region make it challenging to assess elephant populations and monitor their movements. 
+                    <br><br>
+                    Conservation efforts in these other protected areas focus on maintaining habitat integrity, mitigating human-wildlife conflict, and conducting research to better understand elephant distribution and population dynamics. 
+               </p>
+            </div>
+        </div>
+        <div class="elephant-item">
+            <img src="The week in wildlife - in pictures.jpg" alt="Elephant 3" onclick="alert('Image 3 clicked!')">
+            <div class="text">
+                <h3>Conservation Challenges and Future Outlook</h3>
+                <p>
+            The conservation of elephants in Ghana faces numerous challenges. Habitat loss due to deforestation, agriculture, and infrastructure development continues to be a significant threat. Human-elephant conflict, including crop raiding and infrastructure damage, can lead to negative interactions and pose a threat to both elephants and local communities. 
+                    <br>br>
+                    Illegal ivory trade remains a major concern, as the demand for ivory products drives poaching and threatens elephant populations across Africa. Addressing this issue requires strong international cooperation to combat illegal wildlife trafficking networks. 
+                    <br><br>
+                    Conservation efforts in Ghana are focused on strengthening protected area management, enhancing law enforcement, and promoting community-based conservation initiatives. These efforts involve working with local communities to develop sustainable livelihoods, mitigating human-wildlife conflict, and raising awareness about the importance of elephant conservation.
+                    <br><br>
+                    The future of elephants in Ghana depends on the continued commitment to conservation efforts, including strengthening protected areas, combating illegal wildlife trade, and promoting sustainable development that minimizes the impact on elephant habitats. By working together, we can ensure that these magnificent creatures continue to roam the savannas of Ghana for generations to come.
+                </p>                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <h4>About Us</h4>
+            <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#">Service 1</a></li>
+                <li><a href="#">Service 2</a></li>
+                <li><a href="#">Service 3</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Connect</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        const elephantItems = document.querySelectorAll('.elephant-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        elephantItems.forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
+
+
+  <!-- <section class="elephant-section">
+        <div class="elephant-item">
+            <img src="elephant1.jpg" alt="Elephant 1" onclick="alert('Image 1 clicked!')">
+            <div class="text">
+                <h3>The Gentle Giants of Mole</h3>
+                <p>
+                    
+            </div>
+        </div>
+        <div class="elephant-item right">
+            <img src="elephant2.jpg" alt="Elephant 2" onclick="alert('Image 2 clicked!')">
+            <div class="text">
+                <h3>Beyond Mole: Elephant Distribution in Ghana</h3>
+                <p>
+                      </p>
+            </div>
+        </div>
+        <div class="elephant-item">
+            <img src="elephant3.jpg" alt="Elephant 3" onclick="alert('Image 3 clicked!')">
+            <div class="text">
+                <h3>Conservation Challenges and Future Outlook</h3>
+                <p>
+                    
+            </div>
+        </div>
+    </section>-->
+
+    <script>
+        // ... (Your JavaScript from the previous response) ...
+    </script>
+</body>
+</html>

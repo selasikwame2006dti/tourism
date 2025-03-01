@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkeys of Ghana</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a, .nav-button {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(5px);
+        }
+
+        .intro-section {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-image: url('yoel-winkler-mL8VWBs_D08-unsplash.jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .intro-section h1{
+            font-size: 60px;
+            color: bisque;
+            font-family: Georgia;
+        }
+        .intro-section p{
+            font: 2em sans-serif;
+        }
+
+        .intro-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        .intro-section div {
+            position: relative;
+            z-index: 1;
+        }
+
+        .monkey-section {
+            padding: 40px;
+            background-color: rgb(226, 232, 238);
+        }
+
+        .monkey-item {
+            display: flex;
+            align-items: center;
+            width: 90%;
+            margin: 40px auto;
+        }
+
+        .monkey-item img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .monkey-item .text {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .monkey-item.right img {
+            order: 2;
+        }
+
+        .monkey-item.right .text {
+            order: 1;
+        }
+
+        .monkey-item.bottom img {
+            width: 50%;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .feature-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .learn-more-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            transform: translateY(5px);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        footer h4 {
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .monkey-item {
+                flex-direction: column;
+            }
+
+            .monkey-item img {
+                max-width: 100%;
+            }
+
+            .monkey-item.right img,
+            .monkey-item.right .text {
+                order: initial;
+            }
+
+            .monkey-item.bottom img {
+                width: 100%;
+            }
+        }
+
+        .feature-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .learn-more-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            transform: translateY(5px);
+        }
+
+
+        @media (max-width: 600px){
+            .feature-section{
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="ghtour.png" alt="" height="50px" width="200px"><</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="places.html">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button class="nav-button">Sign Up</button></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="intro-section">
+        <div>
+            <h1>Discover the Monkeys of Ghana</h1>
+            <p>Explore the diverse primate species found in our beautiful reserves.</p>
+        </div>
+    </section>
+
+    <section class="monkey-section">
+        <div class="monkey-item">
+            <img src="Incredible Mona monkey pictures showcasing their unique adaptation - Animals Wallpaper Animal Tattoo.jpg" alt="Monkey 1">
+            <div class="text">
+                <h3>The Mona Monkey</h3>
+                <p>
+                    The Mona monkey (Cercopithecus mona) is a common sight in Ghana's forests, especially in the Kakum National Park. These monkeys are known for their distinctive white brow band and cheek patches, as well as their playful nature. They are primarily arboreal, meaning they spend most of their time in trees, feeding on fruits, insects, and leaves. Their social structure is complex, with groups led by dominant males. In Ghana, they are vital to the ecosystem, playing a role in seed dispersal. Their presence indicates a healthy forest environment, making their conservation crucial. They face threats from habitat loss due to deforestation and human encroachment. Efforts to protect them include community involvement in conservation projects and ecotourism, which provides economic benefits while ensuring their safety.
+                    <br><br>
+                    Kakum National Park, located in the coastal environs of the Central Region of Ghana, is one of the most famous locations to observe these monkeys. The park spans approximately 375 square kilometers and is renowned for its canopy walkway, which allows visitors to observe wildlife from a unique perspective. The park’s diverse ecosystem, ranging from rainforest to swamp areas, provides an ideal habitat for Mona monkeys. The park's management actively engages in conservation efforts, including patrols to prevent poaching and habitat destruction. Visitors can participate in guided tours, learning about the park's biodiversity and the importance of its preservation.
+                    <br><br>
+                    Another significant location is the Bia National Park, situated in the Western Region of Ghana. This park, which includes a biosphere reserve, is home to a wide range of wildlife, including Mona monkeys. The park’s dense forest cover and varied terrain create a perfect environment for these primates. The Bia National Park is less visited than Kakum, offering a more secluded experience for nature enthusiasts. Conservation initiatives here focus on maintaining the park’s ecological integrity and promoting sustainable tourism.
+                    <br><br>
+                    The Ankasa Conservation Area, also in the Western Region, is another crucial habitat for Mona monkeys. This area, known for its high biodiversity, is a haven for various primate species. The Ankasa forest is one of the few remaining intact rainforests in Ghana, providing a refuge for numerous wildlife species. Conservation efforts in Ankasa emphasize the protection of the forest from illegal logging and farming. The area’s remote location and dense vegetation make it challenging to access, which has inadvertently helped to preserve its natural state.
+                    <br><br>
+                    Additionally, the Tafi Atome Monkey Sanctuary, a community-based conservation project, is a unique example of human-wildlife coexistence. Located in the Volta Region, this sanctuary is home to a population of Mona monkeys considered sacred by the local community. The sanctuary’s success is attributed to the community’s traditional beliefs, which have protected the monkeys for centuries. Visitors to Tafi Atome can observe the monkeys up close and learn about the cultural significance of these animals. The sanctuary serves as a model for community-driven conservation, demonstrating how traditional practices can contribute to wildlife protection.
+                </p>
+            </div>
+        </div>
+        <div class="monkey-item right">
+            <img src="Lesser Spot-nosed Monkey.jpg" alt="Monkey 2">
+            <div class="text">
+                <h3>The Spot-Nosed Monkey</h3>
+                <p>
+                    The Spot-nosed monkey (Cercopithecus nictitans) is another fascinating primate found in Ghana's forests. These monkeys are known for their distinctive white nose patch and their complex vocalizations. They are highly social animals, living in groups with intricate communication systems. Their diet consists of fruits, insects, and leaves, and they play a vital role in seed dispersal. Conservation efforts focus on protecting their habitat from deforestation and promoting awareness about their ecological importance.
+                    <br><br>
+                    The Kakum National Park is a primary habitat for Spot-nosed monkeys, providing a rich and diverse ecosystem that supports their survival. The park’s varying forest types, from primary rainforest to secondary growth, create a mosaic of habitats that cater to different primate species. The Spot-nosed monkeys are often seen in the lower canopy and understory, where they forage for food and interact with their social groups. The park’s management implements strict regulations to prevent illegal activities that could harm the monkeys and their habitat.
+                    <br><br>
+                    The Bia National Park also provides a suitable environment for Spot-nosed monkeys. The park’s large expanse of undisturbed forest offers ample resources and protection for these primates. The Spot-nosed monkeys are known to be more elusive than Mona monkeys, often staying hidden in the dense vegetation. The park’s conservation efforts include monitoring primate populations and conducting research to understand their behavior and ecology.
+                    <br><br>
+                    The Ankasa Conservation Area, with its dense and diverse forest, is another crucial habitat for Spot-nosed monkeys. The area’s remote and
+                </p>
+            </div>
+        </div>
+
+        <section class="feature-section">
+            <div class="feature-box">
+                <img src="matthew-spiteri-WfZ4WCuNtlg-unsplash.jpg" alt="Feature 1">
+                <button class="learn-more-btn"><a href="ele.html">Leaer more</a></button>
+            </div>
+            <div class="feature-box">
+                <img src="American Alligator.jpg" alt="Feature 2">
+                <button class="learn-more-btn"><a href="cross.html">Learn More</a></button>
+            </div>
+            <div class="feature-box">
+                <img src="Lions feeding.jpg" alt="Feature 3">
+                <button class="learn-more-btn"><a href="ll.html">Learn More</a></button>
+            </div>
+            <div class="feature-box">
+                <img src="RST727720151016.jpg" alt="Feature 4">
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+            <div class="feature-box">
+                <img src="zeb.html" alt="Feature 5">
+                <button class="learn-more-btn">learn More</button>
+            </div>
+        </section>
+                    <footer>
+                        <div>
+                            <h4>About Us</h4>
+                            <ul>
+                                <li><a href="#">Our Story</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Services</h4>
+                            <ul>
+                                <li><a href="#">Service 1</a></li>
+                                <li><a href="#">Service 2</a></li>
+                                <li><a href="#">Service 3</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Support</h4>
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Help</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Legal</h4>
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Use</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Connect</h4>
+                            <ul>
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Instagram</a></li>
+                            </ul>
+                        </div>
+                    </footer>

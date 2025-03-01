@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majestic Lions of Ghana</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            color: #333;
+            overflow-x: hidden;
+            font-size: 16px; 
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a, .nav-button {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(5px);
+        }
+
+        .intro-section {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-image: url('zdenek-machacek-UxHol6SwLyM-unsplash.jpg');
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .feature-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .learn-more-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            transform: translateY(5px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .intro-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-section div {
+            position: relative;
+            z-index: 1;
+        }
+
+        .lion-section {
+            padding: 20px; /* Reduced padding for mobile */
+        }
+
+        .lion-item {
+            display: flex;
+            flex-direction: column; 
+            width: 95%; 
+            margin: 20px auto; 
+            opacity: 0;
+            transform: translateY(20px); 
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .lion-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .lion-item img {
+            max-width: 100%; 
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-bottom: 10px; /* Space between image and text */
+        }
+
+        .lion-item img:hover {
+            transform: scale(1.02); /* Reduced scale on mobile hover */
+        }
+
+        .lion-item .text {
+            flex-grow: 1;
+            padding: 10px; /* Reduced padding for mobile */
+        }
+
+        .lion-item.right img {
+            order: 0; /* Reset order on mobile */
+        }
+
+        .lion-item.right .text {
+            order: 1; /* Reset order on mobile */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        footer h4 {
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (min-width: 768px) { /* Desktop styles */
+            .lion-section {
+                padding: 40px;
+            }
+
+            .lion-item {
+                flex-direction: row;
+                width: 90%;
+                margin: 40px auto;
+                transform: translateY(50px);
+            }
+
+            .lion-item img {
+                max-width: 40%;
+            }
+
+            .lion-item.right img {
+                order: 2;
+            }
+
+            .lion-item.right .text {
+                order: 1;
+            }
+
+            .lion-item img:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 200px){
+            body{
+                font-size:14px;
+            }
+        }
+    </style>
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majestic Lions of Ghana</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<header>
+    <div class="logo">My Logo</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="culture.html">Culture</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><button class="nav-button">Sign Up</button></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <section class="intro-section">
+        <div>
+            <h1>Where the Roar Echoes: Lions of Ghana</h1>
+            <p>Unveiling the majestic presence of lions in Ghana's wild landscapes.</p>
+        </div>
+    </section>
+
+    <section class="lion-section">
+        <div class="lion-item">
+            <img src="Trips for Animal Lovers_ Tanzania.jpg" alt="Lion 1" onclick="alert('Image 1 clicked!')">
+            <div class="text">
+                <h3>The Majesty of Mole</h3>
+                <p>
+                    Within the vast expanse of Mole National Park, Ghana's largest protected area, lions roam as apex predators, embodying the raw power and untamed beauty of the African savanna. These majestic creatures, with their golden manes and piercing eyes, hold a significant place in the park's ecosystem, regulating prey populations and maintaining ecological balance.
+                    <br><br>
+                    Mole National Park, situated in the northwestern region of Ghana, spans an impressive 4,577 square kilometers, encompassing diverse habitats ranging from savanna woodlands to riparian forests. This rich tapestry of landscapes provides ample opportunities for lions to thrive, offering them shelter, sustenance, and ample space to roam.
+                    <br><br>
+                    Lions in Mole National Park are primarily found in the open savanna woodlands, where they can easily spot and stalk their prey. Their diet consists mainly of ungulates such as antelope, buffalo, and warthogs, which they hunt with stealth and precision. The park's diverse prey base ensures that lions have access to a consistent food supply, allowing them to maintain healthy populations.
+                    <br><br>
+                    The social structure of lions in Mole National Park is characterized by prides, which typically consist of related females, their offspring, and a coalition of males. These prides operate as cohesive units, cooperating in hunting, territorial defense, and raising cubs. The bonds within these prides are strong, fostering a sense of community and ensuring the survival of the group.
+                    <br><br>
+                    Conservation efforts in Mole National Park play a crucial role in safeguarding the lion population and their habitat. The park's management implements various strategies, including anti-poaching patrols, habitat protection, and community engagement programs, to mitigate threats and promote coexistence between humans and lions.
+                    <br><br>
+                    Challenges such as habitat encroachment, human-wildlife conflict, and illegal hunting pose significant threats to lions in Mole National Park. However, ongoing conservation initiatives, coupled with increased awareness and support from local communities, offer hope for the long-term survival of these iconic predators.
+                    <br><br>
+                    Visitors to Mole National Park have the opportunity to witness lions in their natural habitat, observing their behavior and appreciating their role in the ecosystem. Guided safaris and wildlife tours provide immersive experiences, allowing tourists to connect with nature and support conservation efforts.
+                </p>
+            </div>
+        </div>
+        <div class="lion-item">
+            <img src="_RST727720151016.jpg" alt="Lion 2" onclick="alert('Image 2 clicked!')">
+            <div class="text">
+                <h3>The Elusive Predators</h3>
+                <p>
+                    While Mole National Park stands as the primary stronghold for lions in Ghana, sightings of these majestic predators have also been reported in other protected areas, albeit less frequently. These elusive encounters underscore the importance of maintaining connectivity between habitats and ensuring the long-term viability of lion populations across the country.
+                    <br><br>
+                    One such area is the Digya National Park, located in the Volta Region of Ghana. Although lion sightings are rare, the park's diverse ecosystem, encompassing forests, wetlands, and savanna woodlands, provides suitable habitat for these apex predators. Digya National Park's remote location and rugged terrain make it challenging to monitor wildlife populations, but ongoing surveys and research efforts aim to shed light on the presence and distribution of lions within the park.
+                    <br><br>
+                    Another potential habitat for lions in Ghana is the Bia National Park, situated in the Western Region. This park, known for its dense rainforest and varied terrain, offers a refuge for numerous wildlife species, including lions. The Bia National Park's remote location and dense vegetation make it difficult to conduct comprehensive wildlife surveys, but anecdotal evidence and occasional sightings suggest that lions may still roam within its boundaries.
+                    <br><br>
+                    The Ankasa Conservation Area, also in the Western Region, is another area where lions may potentially be found. This vast expanse of rainforest, known for its high biodiversity, provides a haven for a wide range of wildlife species. While lion sightings are infrequent, the area's remote location and dense vegetation offer suitable habitat for these predators.
+                    <br><br>
+                    Conservation efforts in these protected areas focus on maintaining habitat connectivity, preventing habitat degradation, and mitigating human-wildlife conflict. By safeguarding these ecosystems and promoting coexistence between humans and wildlife, Ghana can ensure the long-term survival of lions and other iconic species.
+                </p>
+            </div>
+        </div>
+        <div class="lion-item">
+            <img src="lion3.jpg" alt="Lion 3" onclick="alert('Image 3 clicked!')">
+            <div class="text">
+                <h3>Conservation and Challenges</h3>
+                <p>
+                    The presence of lions in Ghana's protected areas underscores the importance of conservation efforts in safeguarding these apex predators and their habitats. However, lions face numerous challenges, including habitat loss, human-wildlife conflict, and illegal hunting, which threaten their long-term survival.
+                    <br><br>
+                    Habitat loss, driven by agricultural expansion, deforestation, and infrastructure development, is a major threat to lions in Ghana. As human populations grow and land use patterns change, natural habitats are fragmented and degraded, reducing the availability of suitable habitat for lions and their prey.
+                    <br><br>
+                    Human-wildlife conflict arises when lions come into contact with human settlements and livestock, leading to retaliatory killings and persecution. Livestock predation by lions can cause significant economic losses for local communities, exacerbating tensions and hindering conservation efforts.
+                    <br><br>
+                    Illegal hunting, driven by the demand for bushmeat and wildlife products, poses a direct threat to lions and their prey. Poaching for trophies, traditional medicine, and commercial purposes can deplete lion populations and disrupt ecological balance.
+                    <br><br>
+                    To address these challenges, conservation efforts in Ghana focus on strengthening protected area management, enhancing law enforcement, and promoting community-based conservation initiatives. Collaboration between government agencies, NGOs, local communities, and research institutions is essential for developing and implementing effective conservation strategies.
+                    <br><br>
+                    Raising awareness about the ecological importance of lions and promoting sustainable livelihoods for local communities are also crucial components of conservation efforts. By fostering a culture of coexistence and stewardship, Ghana can ensure the long-term survival of lions and other wildlife species.
+                </p>
+            </div>
+        </div>
+        <div class="lion-item">
+            <img src="Lions feeding.jpg" alt="Lion 4" onclick="alert('Image 4 clicked!')">
+            <div class="text">
+                <h3>Lion Facts</h3>
+                <p>
+                    Lions are highly social animals, living in groups called prides. Prides typically consist of related females, their offspring, and a coalition of males. They are the only cats that live in groups. Lions are apex predators, meaning they are at the top of the food chain and play a crucial role in regulating ecosystem dynamics.
+                    <br><br>
+                    Male lions are easily recognizable by their impressive manes, which vary in color and size depending on age, genetics, and environmental factors. Manes serve as visual signals of dominance and attract females. Lions are primarily nocturnal, meaning they are most active at night. They spend much of the day resting and conserving energy for hunting and territorial defense.
+                    <br><br>
+                    Lions are opportunistic hunters, meaning they prey on a wide range of animals, from small rodents to large ungulates. Their diet varies depending on habitat and prey availability. Lions are highly vocal animals, using a variety of vocalizations, including roars, growls, and grunts, to communicate with each other and establish territory.
+                    <br><br>
+                    Cubs are born blind and helpless, relying on their mothers for care and protection. They begin to follow their mothers on hunts at around three months old and become independent hunters at around two years old. Lions are listed as vulnerable on the IUCN Red List of Threatened Species, indicating that they face a high risk of extinction in the wild.
+                    <br><br>
+                    Conservation efforts are crucial for safeguarding lion populations and their habitats. By protecting lions, we are not only preserving a magnificent species but also maintaining the ecological balance of our natural ecosystems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-section">
+        <div class="feature-box">
+            <img src="matthew-spiteri-WfZ4WCuNtlg-unsplash.jpg" alt="Feature 1">
+            <button class="learn-more-btn"><a href="ele.html">Learn More</a></button>
+        </div>
+        <div class="feature-box">
+            <img src="82835538-1271-4230-8d66-8bf3a1cccec9.jpg" alt="Feature 2">
+            <button class="learn-more-btn"><a href="zeb.html">Learn More</a></button>
+        </div>
+        <div class="feature-box">
+            <img src="huy-nguyen-U3WxoIA7Nvo-unsplash.jpg" alt="Feature 3">
+            <button class="learn-more-btn">Learn More</button>
+        </div>
+        <div class="feature-box">
+            <img src="American Alligator.jpg" alt="Feature 4">
+            <button class="learn-more-btn"><a href="cross.html">Learn More</a></button>
+        </div>
+        <div class="feature-box">
+            <img src="Incredible Mona monkey pictures showcasing their unique adaptation - Animals Wallpaper Animal Tattoo.jpg" alt="Feature 5">
+            <button class="learn-more-btn"><a href=""></a></button>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <h4>About Us</h4>
+            <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#">Service 1</a></li>
+                <li><a href="#">Service 2</a></li>
+                <li><a href="#">Service 3</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Connect</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">&copy; Ministry of Tourism GHANA </a></li>
+    
+    
+            </ul>
+        </div>
+    </footer>
+
+
+    <script>
+        const lionItems = document.querySelectorAll('.lion-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        lionItems.forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>

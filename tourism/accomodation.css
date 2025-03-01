@@ -1,0 +1,89 @@
+
+:root{
+    --main-color:#f0f1f3;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+    }
+    body{
+        background: var(--main-color);
+    }
+    .main{
+        height: 100vh;
+        background-image: url(Images/valeriia-bugaiova-_pPHgeHz1uk-unsplash.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+    
+    header{
+        height: 70px;
+        width: 100%;
+        background-color: rgb(234, 185, 27);
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        position: sticky;
+    }
+    
+    .logo a{
+        font-size: 30px;
+        margin-left: 20px;
+        color: black;
+    }
+    
+    nav ul{
+        display: flex; 
+    }
+    
+    nav ul li a{
+        color: black;
+        margin: 15px;
+        font-size: 20px;
+    }
+    
+    nav ul li a:hover{
+        color: orange;
+        background-color: white;
+        padding: 5px 15px 5px 15px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.5s;
+    }
+    
+    /* .headerButton{
+        padding: 10px 5px 10px 5px;
+    } */
+    
+    .headerButton button{
+        padding: 5px 30px 5px 30px;
+        border-radius: 10px;
+        background-color: white;
+        border-color: white;
+        border: none;
+        margin-right: 20px;
+    }
+    
+    .headerButton button a{
+        color: rgb(234, 158, 27);
+        font-weight: bold;
+    }
+    
+    .headerButton button:hover{
+        background: rgb(255, 217, 147);
+        transition: 2s;
+    }
+    
+    /* .headerButton button a:hover{
+        color: white;
+    } */
+    
+    .main header .headerButton i{
+        color: white;
+        margin-right: 10px;
+    }

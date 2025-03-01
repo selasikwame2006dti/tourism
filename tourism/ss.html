@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a, .nav-button {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(5px);
+        }
+
+        .intro-section {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #e0e0e0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .culture-section {
+            height: 120vh;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .culture-item {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            margin: 20px auto;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+
+        .culture-item.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .culture-item img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .culture-item .text {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .culture-item.right img {
+            order: 2;
+        }
+
+        .culture-item.right .text {
+            order: 1;
+        }
+
+        .feature-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+
+        .feature-box.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .feature-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .learn-more-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            transform: translateY(5px);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        footer h4 {
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .culture-item {
+                flex-direction: column;
+            }
+
+            .culture-item img {
+                max-width: 100%;
+            }
+
+            .culture-item.right img,
+            .culture-item.right .text {
+                order: initial;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button class="nav-button">Sign Up</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro-section">
+        <div>
+            <h1>Welcome to My Website</h1>
+            <p>This is an introduction to what this website is about.</p>
+        </div>
+    </section>
+
+    <section class="culture-section">
+        <div class="culture-item">
+            <img src="culture1.jpg" alt="Culture 1">
+            <div class="text">
+                <h3>Culture 1</h3>
+                <p>Description of Culture 1.</p>
+            </div>
+        </div>
+        <div class="culture-item right">
+            <img src="culture2.jpg" alt="Culture 2">
+            <div class="text">
+                <h3>Culture 2</h3>
+                <p>Description of Culture 2.</p>
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="culture3.jpg" alt="Culture 3">
+            <div class="text">
+                <h3>Culture 3</h3>
+                <p>Description of Culture 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-section">
+        <div class="feature-box">
+            <img src="feature1.jpg" alt="Feature 1">
+            <button class="learn-more-btn">Learn More</button>
+        </div>
+        <div class="feature-box">
+            <img src="feature2.jpg" alt="Feature 2">
+            <button class="learn-more-btn">Learn More</button>
+        </div>
+        <div class="feature-box">
+            <img src="feature3.jpg" alt="Feature 3">
+            <button class="learn-more-btn">Learn More</button>
+        </div>
+        <div class="feature-box">
+            <img src="feature4.jpg" alt="Feature 4">
+            <button class="learn-more-btn">Learn More</button>
+        </div>
+        <div class="feature-box">
+            <img src="feature5.jpg" alt="Feature 5">
+            <button class="learn-more-btn">Learn More</button>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <h4>About Us</h4>
+            <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#">Service 1</a></li>
+                <li><a href="#">Service 2</a></li>
+                <li><a href="#">Service 3</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Legal</h4>
+

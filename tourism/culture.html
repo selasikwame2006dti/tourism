@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Tapestry: Practices of Ghana</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            color: #333;
+            overflow-x: hidden;
+            font-size: 16px;
+            background-color: rgb(161, 161, 158);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a, .nav-button {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(5px);
+        }
+
+
+        .intro-section {
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-image: url('emmanuel-offei-rEBd3_2M-FU-unsplash.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .intro-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-section div {
+            position: relative;
+            z-index: 1;
+        }
+
+        .culture-section {
+            padding: 20px;
+        }
+
+        .culture-item {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 95%;
+            margin: 30px auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .culture-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .culture-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .culture-item img:hover {
+            transform: scale(1.02);
+        }
+
+        .culture-item .text {
+            padding: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .culture-section {
+                padding: 40px;
+            }
+
+            .culture-item {
+                grid-template-columns: 1fr 1fr;
+                width: 90%;
+                margin: 40px auto;
+                gap: 40px;
+            }
+
+            .culture-item:nth-child(even) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .culture-item:nth-child(even) img {
+                order: 2;
+            }
+
+            .culture-item:nth-child(even) .text {
+                order: 1;
+            }
+
+            .culture-item img:hover {
+                transform: scale(1.05);
+            }
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        footer h4 {
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 200px) {
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="ghtour.png" alt="" height="50px" width="200px"><
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="#">Gallery</a></li>
+                <!-- <li><a href="#">Destinations</a></li> -->
+                <li><a href="places.html">About Us</a></li>
+                <li><a href="#" class="button">Plan Your Trip</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="intro-section">
+        <div>
+            <h1>Cultural Tapestry: Practices of Ghana</h1>
+            <p>Exploring the rich and diverse cultural heritage of Ghana.</p>
+        </div>
+    </section>
+
+    <section class="culture-section">
+        <div class="culture-item">
+            <img src="oswald-elsaboath-I3ZqknAFJ3w-unsplash.jpg" alt="Ewe Culture" onclick="alert('Ewe Culture Image Clicked!')">
+            <div class="text">
+                <h3>The Ewe Culture: Traditions and Heritage</h3>
+                <p>
+                    The Ewe people, predominantly residing in the Volta Region of Ghana, possess a rich cultural heritage deeply rooted in their social structures, religious beliefs, and artistic expressions. The Ewe society is organized around a system of chieftaincy and family lineages, where elders play a crucial role in decision-making and maintaining social order. Their traditional religion revolves around the worship of Mawu, the supreme creator, and other deities associated with nature and ancestors.
+                    <br><br>
+                    One of the most distinctive aspects of Ewe culture is their drumming and dancing traditions. The renowned Agbadza dance, performed during social gatherings and festivals, showcases the rhythmic complexity and expressive movements of Ewe dance. Their music is often accompanied by the use of various drums, including the atsimevu and kidi, creating a vibrant and energetic atmosphere.
+                    <br><br>
+                    The Ewe people are also known for their intricate weaving techniques, particularly the kente cloth, which is highly prized for its vibrant colors and symbolic patterns. They are skilled artisans in pottery, wood carving, and metalwork, producing a wide range of functional and decorative objects. Their traditional festivals, such as the Hogbetsotso festival, celebrate their history and migration, featuring colorful parades, drumming, and dancing.
+                    <br><br>
+                    The Ewe language, a tonal language spoken by millions, plays a central role in preserving their cultural identity. Oral traditions, including folktales, proverbs, and songs, are passed down through generations, transmitting cultural values and historical knowledge. The Ewe people's strong sense of community and respect for their traditions have contributed to the preservation of their cultural heritage in the face of modernization.
+                </p>
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="western africa _ folkfashion.jpg" alt="Akan Culture" onclick="alert('Akan Culture Image Clicked!')">
+            <div class="text">
+                <h3>The Akan Culture: Lineage and Festivals</h3>
+                <p>
+ The Akan people, forming the largest ethnic group in Ghana, are renowned for their complex social structures, rich artistic traditions, and elaborate festivals. The Akan society is organized around matrilineal clans, where lineage and inheritance are traced through the female line. Chieftaincy plays a vital role in their social and political organization, with chiefs holding significant authority and prestige.
+                    <br><br>
+                    The Akan are famous for their intricate kente cloth, a handwoven fabric with vibrant colors and symbolic patterns. They are skilled artisans in wood carving, producing elaborate stools, masks, and other ceremonial objects. Their goldweights, used for measuring gold dust, are also highly prized for their artistic and historical significance.
+                    <br><br>
+                    The Akan people celebrate numerous festivals throughout the year, including the Akwasidae festival, which honors ancestors and chiefs. These festivals feature colorful parades, drumming, dancing, and the display of traditional regalia. The Adae Kese festival, held every few years, is a grand celebration of Akan culture and heritage.
+                    <br><br>
+                    The Akan language, Twi, is widely spoken and plays a vital role in preserving their cultural identity. Oral traditions, including folktales, proverbs, and songs, are passed down through generations, transmitting cultural values and historical knowledge. The Akan people's strong sense of community and respect for their traditions have contributed to the preservation of their cultural heritage in the face of modernization.
+               </p>
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="Blue Mini Isiagu Dress for African Brides and Igbo Themed Parties, Complete Igbo Bridal Attire for Weddings and Asoebi - Etsy.jpg" alt="Ga Culture" onclick="alert('Ga Culture Image Clicked!')">
+            <div class="text">
+                <h3>The Ga Culture: Maritime Traditions and Festivals</h3>
+                <p>
+   The Ga people, inhabiting the Greater Accra Region of Ghana, are known for their maritime traditions, vibrant festivals, and unique social structures. The Ga society is organized around patrilineal clans, where lineage and inheritance are traced through the male line. Chieftaincy plays a vital role in their social and political organization, with chiefs holding significant authority and prestige.
+                    <br><br>
+                    The Ga people are skilled fishermen and boat builders, relying on the sea for their livelihoods. Their fishing traditions are deeply ingrained in their culture, with festivals such as the Homowo festival celebrating the harvest of the sea. The Homowo festival, meaning "hooting at hunger," features colorful parades, drumming, dancing, and the sprinkling of kpokpoi, a traditional cornmeal dish.
+                    <br><br>
+                    The Ga people are also known for their elaborate funeral customs, which are considered an important part of their cultural heritage. Their funerals often feature colorful coffins, drumming, and dancing, celebrating the life of the deceased. The Ga language, Ga, is widely spoken and plays a vital role in preserving their cultural identity.
+                    <br><br>
+                    Oral traditions, including folktales, proverbs, and songs, are passed down through generations, transmitting cultural values and historical knowledge. The Ga people's strong sense of community and respect for their traditions have contributed to the preservation of their cultural heritage in the face of modernization.
+             </p>
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="8 Recommended Cultural Experiences in Southern and Eastern Africa.jpg" alt="Northern Ghana Culture" onclick="alert('Northern Ghana Culture Image Clicked!')">
+            <div class="text">
+                <h3>Northern Ghana: Equestrian Traditions and Festivals</h3>
+                <p>
+             The people of Northern Ghana, comprising various ethnic groups such as the Dagomba, Mamprusi, and Gonja, are known for their equestrian traditions, Islamic influences, and unique social structures. The Northern Ghanaian societies are organized around chieftaincy and family lineages, where elders play a crucial role in decision-making and maintaining social order. Islam plays a significant role in their lives, with many adhering to Islamic practices and traditions.
+                    <br><br>
+                    The people of Northern Ghana are skilled horse riders and warriors, with equestrian traditions deeply ingrained in their culture. Festivals such as the Damba festival, celebrating the birth of Prophet Muhammad, feature colorful parades, drumming, and horse riding displays. They are also known for their traditional dances, such as the Takai dance, performed during social gatherings and festivals.
+                    <br><br>
+                    The people of Northern Ghana are skilled artisans in leatherwork, weaving, and pottery, producing a wide range of functional and decorative objects. Their traditional architecture, featuring round mud houses with thatched roofs, is well-adapted to the hot and dry climate. The languages spoken in Northern Ghana, such as Dagbani, Mampruli, and Gonja, play a vital role in preserving their cultural identity.
+                    <br><br>
+                    Oral traditions, including folktales, proverbs, and songs, are passed down through generations, transmitting cultural values and historical knowledge. The people of Northern Ghana's strong sense of community and respect for their traditions have contributed to the preservation of their cultural heritage in the face of modernization.
+              </p>
+            </div>
+        </div>
+        <!-- <div class="culture-item">
+            <img src="fante_culture.jpg" alt="Fante Culture" onclick="alert('Fante Culture Image Clicked!')">
+            <div class="text">
+                <h3>The Fante Culture: Fishing and Festivals</h3>
+                <p>
+ The Fante people, inhabiting the coastal regions of Ghana, are known for their fishing traditions, vibrant festivals, and unique social structures. The Fante society is organized around patrilineal clans, where lineage and inheritance are traced through the male line. Chieftaincy plays a vital role in their social and political organization, with chiefs holding significant authority and prestige.
+                    <br><br>
+                    The Fante people are skilled fishermen and boat builders, relying on the sea for their livelihoods. Their fishing traditions are deeply ingrained in their culture, with festivals such as the Bakatue festival celebrating the opening of the fishing season. The Bakatue festival features colorful parades, drumming, dancing, and the pouring of libations to the sea god.
+                    <br><br>
+                    The Fante people are also known for their elaborate funeral customs, which are considered an important part of their cultural heritage. Their funerals often feature colorful coffins, drumming, and dancing, celebrating the life of the deceased. The Fante language, Fante--></!---->
+<!-- </p>
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="muslim_culture.jpg" alt="Muslim Culture" onclick="alert('Muslim Culture Image Clicked!')">
+            <div class="text">
+                <h3>Muslim Communities: Faith and Festivals</h3>
+                <p>
+                    [700+ words about Muslim cultural practices in Ghana]
+                </p>
+            </div> -->
+        </div> -->
+    </section>
+    <footer>    <div>
+        <h4>About Us</h4>
+        <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Careers</a></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Services</h4>
+        <ul>
+            <li><a href="#">Service 1</a></li>
+            <li><a href="#">Service 2</a></li>
+            <li><a href="#">Service 3</a></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Support</h4>
+        <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Legal</h4>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Connect</h4>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">&copy; Ministry of Tourism GHANA </a></li>
+
+
+        </ul>
+    </div>
+</footer>
+    
+
+    <script>
+        const cultureItems = document.querySelectorAll('.culture-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        cultureItems.forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
+
+
+<!--<section class="culture-section">
+        <div class="culture-item">
+            <img src="ewe_culture.jpg" alt="Ewe Culture" onclick="alert('Ewe Culture Image Clicked!')">
+            <div class="text">
+                <h3>The Ewe Culture: Traditions and Heritage</h3>
+                <p>
+                    
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="akan_culture.jpg" alt="Akan Culture" onclick="alert('Akan Culture Image Clicked!')">
+            <div class="text">
+                <h3>The Akan Culture: Lineage and Festivals</h3>
+                <p>
+                     </p>
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="ga_culture.jpg" alt="Ga Culture" onclick="alert('Ga Culture Image Clicked!')">
+            <div class="text">
+                <h3>The Ga Culture: Maritime Traditions and Festivals</h3>
+                <p>
+                    The Ga people, inhabiting the Greater Accra Region of Ghana, are known for their maritime traditions, vibrant festivals, and unique social structures. The Ga society is organized around patrilineal clans, where lineage and inheritance are traced through the male line. Chieftaincy plays a vital role in their social and political organization, with chiefs holding significant authority and prestige.
+                    <br><br>
+                    The Ga people are skilled fishermen and boat builders, relying on the sea for their livelihoods. Their fishing traditions are deeply ingrained in their culture, with festivals such as the Homowo festival celebrating the harvest of the sea. The Homowo festival, meaning "hooting at hunger," features colorful parades, drumming, dancing, and the sprinkling of kpokpoi, a traditional cornmeal dish.
+                    <br><br>
+                    The Ga people are also known for their elaborate funeral customs, which are considered an important part of their cultural heritage. Their funerals often feature colorful coffins, drumming, and dancing, celebrating the life of the deceased. The Ga language, Ga, is widely spoken and plays a vital role in preserving their cultural identity.
+                    <br><br>
+                    Oral traditions, including folktales, proverbs, and songs, are passed down through generations, transmitting cultural values and historical knowledge. The Ga people's strong sense of community and respect for their traditions have contributed to the preservation of their cultural heritage in the face of modernization.
+                </p>
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="northern_culture.jpg" alt="Northern Ghana Culture" onclick="alert('Northern Ghana Culture Image Clicked!')">
+            <div class="text">
+                <h3>Northern Ghana: Equestrian Traditions and Festivals</h3>
+                <p>
+                      </p>
+            </div>
+        </div>
+        <div class="culture-item">
+            <img src="fante_culture.jpg" alt="Fante Culture" onclick="alert('Fante Culture Image Clicked!')">
+            <div class="text">
+                <h3>The Fante Culture: Fishing and Festivals</h3>
+                <p>
+                    
